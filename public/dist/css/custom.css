@@ -1,0 +1,146 @@
+.div-filter-area {
+  cursor: pointer;
+}
+
+.box-header .black {
+  color: #444;
+}
+.btn-primary {
+  background-color: #444 !important;
+}
+
+/* --  D3 -- */
+#chart-result {
+  font-size: 10px;
+}
+#bar-chart-result {
+  font-size: 10px;
+}
+/* .axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+} */
+
+/* .line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+} */
+/* -- End D3 -- */
+#bar-chart-result .tick line {
+  stroke-dasharray: 2 2;
+  stroke: #ccc;
+  opacity: 0.2;
+}
+
+.toolTip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6f257f;
+  padding: 14px;
+  text-align: center;
+}
+
+#chart {
+  margin-left: -40px;
+  height: 506px;
+}
+
+text {
+  font: 10px sans-serif;
+}
+
+.dot {
+  /* stroke: #000; */
+  stroke: #75756f;
+  stroke-width: 0.5;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.label {
+  fill: #777;
+}
+
+.year.label {
+  font: 500 196px "Helvetica Neue";
+  fill: #ddd;
+  /* opacity: 0; */
+}
+
+.year.label2 {
+  font: 50px "Helvetica Neue";
+  fill: #8832cd;
+  opacity: 0.5;
+}
+
+.year.label.active {
+  fill: #aaa;
+}
+.year.label2.active {
+  fill: #aaa;
+}
+
+.overlay {
+  fill: none;
+  /* fill: #000; */
+  pointer-events: all;
+  cursor: ew-resize;
+  /* opacity: 0.4; */
+}
+
+#custom-slider {
+  display: inline-block;
+}
+
+#custom-slider .rs-handle {
+  background-color: transparent;
+  border: 8px solid transparent;
+  border-right-color: black;
+  margin: -8px 0 0 14px !important;
+}
+#custom-slider .rs-handle:before {
+  display: block;
+  content: " ";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background: black;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 100%;
+}
+#custom-slider .rs-handle:after {
+  display: block;
+  content: " ";
+  width: 106px;
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  border-top: 2px dotted black;
+}
+#custom-slider .rs-range-color {
+  background-color: #8832cd;
+}
+#custom-slider .rs-path-color {
+  background-color: #ddc5f0;
+}
+.callout.callout-info {
+  color: #856404 !important;
+  background-color: #fff3cd !important;
+  border-color: #ffeeba !important;
+}
