@@ -2,21 +2,25 @@
 
 This project shows the visualization of waiting times and people affected in three different medical care in Canada.
 
-## Instalation
+## To Use
 
-Download code and
+To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
-  npm start
+# Clone this repository
+git clone URL-this-repository
+# Go into the repository
+cd Folder-this-repository
+# Install dependencies
+npm install
+# Run the app
+npm start
 ```
 
 ## Code Structure
 
-- app.js:
+A basic node js application needs just these files:
 
-  File that starts the server / web application.
-  To start, you must enter "node app.js"
-
-  ```bash
-  node app.js
-  ```
+- `package.json` - Points to the app's main file and lists its details and dependencies.
+- `app.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
+- `public/index.html` - A web page to render. This is the app's **renderer process**.
