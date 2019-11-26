@@ -1,0 +1,34 @@
+[
+  {
+    "text": "Number of persons",
+    "value": "num_pers"
+  },
+  {
+    "text": "Low 95% confidence interval, number of persons",
+    "value": "low95CI_num_pers"
+  },
+  {
+    "text": "High 95% confidence interval, number of persons",
+    "value": "high95CI_num_pers"
+  },
+  {
+    "text": "Coefficient of variation, number of persons",
+    "value": "coefvar_num_pers"
+  },
+  {
+    "text": "Percent",
+    "value": "percent"
+  },
+  {
+    "text": "Low 95% confidence interval, percent",
+    "value": "low95CI_percent"
+  },
+  {
+    "text": "High 95% confidence interval, percent",
+    "value": "high95CI_percent"
+  },
+  {
+    "text": "Coefficient of variation, percent",
+    "value": "coefvar_percent"
+  }
+]

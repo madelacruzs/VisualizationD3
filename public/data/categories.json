@@ -1,0 +1,50 @@
+[
+  {
+    "text": "Number of persons",
+    "value": "num_pers"
+  },
+  {
+    "text": "Low 95% confidence interval, number of persons",
+    "value": "low95CI_num_pers"
+  },
+  {
+    "text": "High 95% confidence interval, number of persons",
+    "value": "high95CI_num_pers"
+  },
+  {
+    "text": "Coefficient of variation for number of persons",
+    "value": "coefvar_num_pers"
+  },
+  {
+    "text": "Median waiting time, weeks",
+    "value": "median_weeks"
+  },
+  {
+    "text": "Low 95% confidence interval, median waiting time, weeks",
+    "value": "low95CI_median_weeks"
+  },
+  {
+    "text": "High 95% confidence interval, median waiting time, weeks",
+    "value": "high95CI_median_weeks"
+  },
+  {
+    "text": "Coefficient of variation for median waiting time, weeks",
+    "value": "coefvar_median_weeks"
+  },
+  {
+    "text": "Age-standardized median",
+    "value": "age_median"
+  },
+  {
+    "text": "Low 95% confidence interval, age-standardized median",
+    "value": "low95CI_age_median"
+  },
+  {
+    "text": "High 95% confidence interval, age-standardized median",
+    "value": "high95CI_age_median"
+  },
+  {
+    "text": "Coefficient of variation for age-standardized median",
+    "value": "coefvar_age_median"
+  }
+]
