@@ -57,7 +57,7 @@ function loadCharts(isLoad) {
   }
 
   //Load Data JSON with D3 => Canada Data
-  d3.json("data/gap_income_population_value.json", function(fullData) {
+  d3.json("data/timetrend_income_population_value.json", function(fullData) {
     //Filter Data
     var filterData = fullData
       .filter(
@@ -69,6 +69,7 @@ function loadCharts(isLoad) {
       .sort(function(a, b) {
         return a.REF_DATE - b.REF_DATE;
       });
+    console.log(filterData);
     //Load Bar Chart
     loadBubbleChart(filterData, aFilters, fullData);
   });
@@ -262,7 +263,7 @@ function loadBubbleChart(filterData, aFilters, fullData) {
 
   // Add a title.
   dot.append("title").text(function(d) {
-    return d.GEO;
+    return "Median weeks: " + d.VALUE_medianweeks;
   });
 
   svg
@@ -328,6 +329,11 @@ function loadBubbleChart(filterData, aFilters, fullData) {
       .attr("r", function(d) {
         return radiusScale(radius(d));
       });
+
+    dot.select("title").text(function(d) {
+      // console.log(d);
+      return "Median weeks: " + d.VALUE_medianweeks;
+    });
   }
 
   // Defines a sort order so that the smallest dots are drawn on top.
@@ -359,10 +365,12 @@ function loadBubbleChart(filterData, aFilters, fullData) {
 
   // Interpolates the dataset for the given (fractional) year.
   function interpolateData(year) {
-    return filterData
+    var result = filterData
       .filter(d => d.REF_DATE == year)
       .sort(function(a, b) {
         return a.REF_DATE - b.REF_DATE;
       });
+
+    return result;
   }
 }

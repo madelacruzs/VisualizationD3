@@ -41,13 +41,31 @@ function loadLineChart(filterData, aFilters, fullData) {
     )
     .range([0, width]);
 
+  //Group by Year
+  var sumstat_year = d3
+    .nest() // nest function allows to group
+    .key(function(d) {
+      return d.REF_DATE;
+    })
+    .entries(filterData);
+
+  //Extract years as Array
+  var years = sumstat_year.map(function(d) {
+    return d.key;
+  });
+
+  //Print X Axis
   svg
     .append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(
-      d3.axisBottom(x).tickFormat(function(d) {
-        return ~~d;
-      })
+      d3
+        .axisBottom(x)
+        .tickFormat(function(d) {
+          console.log(d);
+          return ~~d;
+        })
+        .tickValues(years) //Print only years with data
     );
 
   // Add Y axis
@@ -63,10 +81,10 @@ function loadLineChart(filterData, aFilters, fullData) {
 
   svg.append("g").call(d3.axisLeft(y));
 
-  //for color palette
-  var provincies = sumstat.map(function(d) {
-    return d.key;
-  }); // list of group provincies
+  // //for color palette
+  // var provincies = sumstat.map(function(d) {
+  //   return d.key;
+  // }); // list of group provincies
 
   // Draw the line
   path = svg
@@ -126,7 +144,7 @@ function loadLineChart(filterData, aFilters, fullData) {
     });
   // ......
 
-  //Title of Value (Y)
+  // Print Category in Y Axis
   svg
     .append("g")
     .attr("class", "y axis")
@@ -137,6 +155,17 @@ function loadLineChart(filterData, aFilters, fullData) {
     .attr("dy", ".71em")
     .style("text-anchor", "end")
     .text(aFilters.categoryText);
+
+  // Print label Year in X Axis
+  svg
+    .append("g")
+    .attr("class", "x axis")
+    .append("text")
+    .attr("x", width + 40)
+    .attr("y", height)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text("Year");
 
   // ......
   // this is the black vertical line to follow mouse

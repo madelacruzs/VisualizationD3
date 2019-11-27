@@ -25,7 +25,7 @@ color["CA-NT"] = "#727272";
 color["CA-YT"] = "#bfc0c2";
 color["CA-NS"] = "#39a3cd";
 color["CA-PE"] = "#363032";
-
+var aYear = [2001, 2003, 2005, 2007, 2009, 2011, 2013];
 //Initial page load
 $(document).ready(function() {
   "use strict";
@@ -74,22 +74,23 @@ $(document).ready(function() {
   });
 
   //Load Years in drop-down-list
-  for (var i = 2013; i >= 2001; i--) {
+  // for (var i = 2013; i >= 2001; i--) {
+  aYear.forEach(function(year) {
     $("#ddl-year-start").append(
       $("<option />")
-        .val(i)
-        .html(i)
+        .val(year)
+        .html(year)
     );
     $("#ddl-year-end").append(
       $("<option />")
-        .val(i)
-        .html(i)
+        .val(year)
+        .html(year)
     );
-  }
+  });
 
   //Select item in drop downs list
-  $("#ddl-year-start option:last-child").attr("selected", "selected");
-  $("#ddl-year-end option:first-child").attr("selected", "selected");
+  $("#ddl-year-start option:first-child").attr("selected", "selected");
+  $("#ddl-year-end option:last-child").attr("selected", "selected");
 
   //Load Data JSON with Jquery => Categories
   $.getJSON("data/categories.json", function(json) {

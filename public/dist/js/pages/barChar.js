@@ -60,7 +60,7 @@ function loadBarChart(filterData, aFilters, fullData) {
     setSize(nested, fullData);
     drawAxis();
     drawChart(nested);
-    legend(filterData);
+    legend(filterData, aFilters);
   }
 
   // Function to size the SVG for chart
@@ -204,7 +204,7 @@ function loadBarChart(filterData, aFilters, fullData) {
   }
 
   //Function to print labels of provincies with colors
-  function legend(filterData) {
+  function legend(filterData, aFilters) {
     var sumstat = d3
       .nest() // nest function allows to group
       .key(function(d) {
@@ -241,5 +241,27 @@ function loadBarChart(filterData, aFilters, fullData) {
       .text(function(d) {
         return d.values[0].GEO;
       });
+
+    // Print Category in Y Axis
+    svg
+      .append("g")
+      .attr("class", "y axis")
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 66)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text(aFilters.categoryText);
+
+    // Print label Year in X Axis
+    svg
+      .append("g")
+      .attr("class", "x axis")
+      .append("text")
+      .attr("x", width - 65)
+      .attr("y", height - 40)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Year");
   }
 }

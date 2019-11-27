@@ -126,7 +126,7 @@ function loadPieChart(filterData, aFilters, fullData) {
     options: {
       title: {
         display: true,
-        text: "Effect on people in 2011"
+        text: "Effect on people in 2001"
       }
     }
   });
